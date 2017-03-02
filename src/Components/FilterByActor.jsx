@@ -16,7 +16,7 @@ class FilterByActor extends Component {
       newActorsArray = newActorsArray.concat(actorsArray[i])
     }
     newActorsArray = newActorsArray.filter(function (item, index, inputArray) {
-      return inputArray.indexOf(item) == index;
+      return inputArray.indexOf(item) === index;
     })
     this.setState({actors : newActorsArray})
   }

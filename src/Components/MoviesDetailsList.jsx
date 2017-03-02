@@ -16,8 +16,6 @@ class MoviesDetailsList extends Component {
       </li>)
     return (
       <div className='movie-wrapper'>
-        <div className='movie-theme'>
-        </div>
         <div className='movie-details'>
           <div className='movie-name'>
             {movies}
