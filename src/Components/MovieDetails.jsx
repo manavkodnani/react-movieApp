@@ -1,25 +1,53 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Moment from 'react-moment'
 
-class MovieDetails extends Component {
-  render() {
+export default ({name, description, actors, releaseDate, rating, theme}) => {
     const divStyle = {
-      backgroundColor: this.props.theme
+      backgroundColor: theme
     }
-    console.log('date', this.props.releaseDate)
+    const ratingStyle = {
+      color: 'black'
+    }
+    const descriptionStyle = {
+      fontWeight:'lighter'
+    }
+    switch (rating) {
+      case 1: {
+        ratingStyle.color = 'red'
+        break
+      }
+      case 2: {
+        ratingStyle.color = 'red'
+        break
+      }
+      case 3: {
+        ratingStyle.color = 'blue'
+        break
+      }
+      case 4: {
+        ratingStyle.color = 'blue'
+        break
+      }
+      case 5: {
+        ratingStyle.color = 'green'
+        break
+      }
+    }
+    console.log('date', releaseDate)
     return (
       <div className='movie-wrapper'>
-        <div className='movie-theme' style={divStyle}>hi
+        <div className='movie-theme' style={divStyle}>
         </div>
-        Movie name : {this.props.name}<br />
-        Description : {this.props.description}<br />
-        Actors : {this.props.actors}<br />
-        Released On : <Moment date={this.props.releaseDate} format='DD MMMM YYYY' /><br />
-        Rating  :{this.props.rating}<br />
-        Theme : {this.props.theme}
+        <div className='movie-name'>
+        Movie name : {name}<br />
+        <label style={descriptionStyle}>Description : {description}</label><br />
+        Actors : {actors}<br />
+        Released On : <Moment date={releaseDate} format='DD MMMM YYYY' />
+        </div>
+        <br />
+        <div className='movie-rating' style={ratingStyle}>
+          {rating}/5<br />
+        </div>
       </div>
     )
-  }
 }
-
-export default MovieDetails

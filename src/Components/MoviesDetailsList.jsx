@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import MovieDetails from './MovieDetails.jsx'
 
-class MoviesDetailsList extends Component {
-  render() {
-    const movies = this.props.moviesArray.map(movie =>
+export default ({moviesArray}) => {
+    const movies = moviesArray.map(movie =>
       <li key={movie.id}>
         <MovieDetails
           name={movie.name}
@@ -15,17 +14,8 @@ class MoviesDetailsList extends Component {
            />
       </li>)
     return (
-      <div className='movie-wrapper'>
-        <div className='movie-details'>
-          <div className='movie-name'>
+          <div>
             {movies}
           </div>
-          <div className='movie-rating'>
-          </div>
-        </div>
-      </div>
     )
-  }
 }
-
-export default MoviesDetailsList
