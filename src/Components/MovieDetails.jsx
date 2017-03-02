@@ -33,7 +33,10 @@ export default ({name, description, actors, releaseDate, rating, theme}) => {
         break
       }
     }
-    console.log('date', releaseDate)
+    console.log('actors...', actors)
+    let newactors = actors.map((actor) => {
+      return (<li class='actor'>{actor}</li>)
+    })
     return (
       <div className='movie-wrapper'>
         <div className='movie-theme' style={divStyle}>
@@ -41,7 +44,7 @@ export default ({name, description, actors, releaseDate, rating, theme}) => {
         <div className='movie-name'>
         Movie name : {name}<br />
         <label style={descriptionStyle}>Description : {description}</label><br />
-        Actors : {actors}<br />
+        Actors : {newactors}<br />
         Released On : <Moment date={releaseDate} format='DD MMMM YYYY' />
         </div>
         <br />

@@ -1,12 +1,12 @@
 .movie-theme {
   width: 20%;
-  height : 250px;
+  height : 350px;
   border:1px solid black;
   float: left;
 }
 .movie-name {
   width : 40%;
-  height :250px;
+  height :350px;
   margin-left: 200px;
   font-weight: bold;
 }
